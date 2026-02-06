@@ -1,0 +1,8 @@
+{
+  "name": "Project Nexus - Campus Super-App",
+  "description": "An intelligent, unified ecosystem for campus life, featuring AI-powered mail summarization, academic planning, real-time mess tracking, and a student marketplace.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
