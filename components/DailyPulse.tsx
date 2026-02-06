@@ -42,7 +42,7 @@ const DailyPulse: React.FC<DailyPulseProps> = ({ profile, timetable }) => {
   const [showWeeklyMenu, setShowWeeklyMenu] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 10000);
+    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -68,6 +68,16 @@ const DailyPulse: React.FC<DailyPulseProps> = ({ profile, timetable }) => {
     const startTime = parseTime(start);
     const endTime = parseTime(end);
     return currentTime >= startTime && currentTime <= endTime;
+  };
+
+  const getTimeRemaining = (endTimeStr: string) => {
+    const endTime = parseTime(endTimeStr);
+    const diff = endTime.getTime() - currentTime.getTime();
+    if (diff <= 0) return 'Ending...';
+    
+    const mins = Math.floor(diff / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+    return `${mins}m ${secs}s left`;
   };
 
   const currentClass = timetable.find(t => isLive(t.startTime, t.endTime));
@@ -144,9 +154,9 @@ const DailyPulse: React.FC<DailyPulseProps> = ({ profile, timetable }) => {
               </div>
               <div className="bg-white/10 px-6 py-4 rounded-3xl backdrop-blur-md border border-white/20">
                  <p className="text-[10px] font-black uppercase text-indigo-200 mb-1">Time Remaining</p>
-                 <div className="text-xl font-black flex items-center">
+                 <div className="text-xl font-black flex items-center min-w-[140px]">
                     <ClockIcon size={18} className="mr-2" />
-                    Calculating...
+                    {getTimeRemaining(currentClass.endTime)}
                  </div>
               </div>
            </div>

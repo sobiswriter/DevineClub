@@ -1,6 +1,8 @@
 # Project Nexus: The AI Campus Super-App ⚡
 
-Project Nexus is a unified, intelligent ecosystem designed to revolutionize campus life. Built specifically to address the challenges outlined in the **AIFusiion_PS_feb06** problem statement, it integrates academic management, social exchange, and campus navigation into a single, high-performance interface.
+![Project Nexus Preview](public/images/nexus-preview.png)
+
+Project Nexus is a unified, intelligent ecosystem designed to revolutionize campus life. It integrates academic management, social exchange, and campus navigation into a single, high-performance interface.
 
 ## 🚀 Feature Overview
 
@@ -42,23 +44,6 @@ Project Nexus is a unified, intelligent ecosystem designed to revolutionize camp
 *   **Icons**: Lucide React
 *   **Mapping**: Leaflet.js
 *   **UI System**: Glassmorphism, Slim-light custom scrollbars, and high-performance CSS animations.
-
----
-
-## ⚙️ Local Launch Instructions
-
-1.  **Clone the Repository**
-2.  **Environment Variables**: Ensure you have a valid Gemini API key.
-    *   The app expects `process.env.API_KEY` to be available.
-3.  **Install Dependencies**:
-    ```bash
-    npm install
-    ```
-4.  **Run Development Server**:
-    ```bash
-    npm run dev
-    ```
-5.  **Access App**: Navigate to `http://localhost:5173`.
 
 ---
 

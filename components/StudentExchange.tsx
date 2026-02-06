@@ -29,30 +29,23 @@ import {
   Info,
   Code
 } from 'lucide-react';
+// Import shared types
+import { MarketplaceItem, LostFoundItem } from '../types';
 
-interface MarketplaceItem {
-  id: number;
-  title: string;
-  price: number;
-  seller: string;
-  image: string;
-  category: string;
-  description: string;
+// Define props interface for StudentExchange
+interface StudentExchangeProps {
+  marketplaceItems: MarketplaceItem[];
+  setMarketplaceItems: React.Dispatch<React.SetStateAction<MarketplaceItem[]>>;
+  lostFoundItems: LostFoundItem[];
+  setLostFoundItems: React.Dispatch<React.SetStateAction<LostFoundItem[]>>;
 }
 
-interface LostFoundItem {
-  id: number;
-  type: 'lost' | 'found';
-  title: string;
-  location: string;
-  date: string;
-  image: string;
-  category: string;
-  description: string;
-  reporter: string;
-}
-
-const StudentExchange: React.FC = () => {
+const StudentExchange: React.FC<StudentExchangeProps> = ({ 
+  marketplaceItems, 
+  setMarketplaceItems, 
+  lostFoundItems, 
+  setLostFoundItems 
+}) => {
   const [activeSubTab, setActiveSubTab] = useState('marketplace');
   const [wishlist, setWishlist] = useState<number[]>([]);
   
@@ -71,18 +64,6 @@ const StudentExchange: React.FC = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [imageFile, setImageFile] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  // Main Data States
-  const [marketplaceItems, setMarketplaceItems] = useState<MarketplaceItem[]>([
-    { id: 1, title: 'Calculus Made Easy', price: 1800, seller: 'Alice R.', image: 'https://picsum.photos/400/300?random=1', category: 'Books', description: 'Great for midterm prep.' },
-    { id: 2, title: 'Mechanical Keyboard RGB', price: 2450, seller: 'Bob M.', image: 'https://picsum.photos/400/300?random=2', category: 'Electronics', description: 'Blue switches, very clicky.' },
-    { id: 3, title: 'Hero Bicycle - 18 Speed', price: 6500, seller: 'Charlie K.', image: 'https://picsum.photos/400/300?random=3', category: 'Transport', description: 'Recently serviced.' },
-  ]);
-
-  const [lostFoundItems, setLostFoundItems] = useState<LostFoundItem[]>([
-    { id: 1, type: 'lost', title: 'Blue Nike Backpack', location: 'Central Library', date: 'Oct 22', category: 'Personal', description: 'Contains a laptop and several notebooks.', image: 'https://picsum.photos/400/300?random=10', reporter: 'Sam V.' },
-    { id: 2, type: 'found', title: 'Keys with Keychain', location: 'Canteen Area', date: 'Oct 23', category: 'Keys', description: 'Has a small rubber duck keychain.', image: 'https://picsum.photos/400/300?random=11', reporter: 'Security Post 1' },
-  ]);
 
   const travelRides = [
     { id: 1, from: 'Campus Main Gate', to: 'Airport (IGI)', time: '4:00 PM', date: 'Oct 24', passengers: 2, max: 4, pricePerPerson: 850, carbonSaved: '2.4kg', driverRating: 4.9 },
