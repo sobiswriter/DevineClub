@@ -34,7 +34,7 @@ Project Nexus is a unified, intelligent ecosystem designed to revolutionize camp
 *   **Transit Hub**: Bus/Shuttle tracking and estimated auto-rickshaw fares for common routes.
 
 ### 6. Nexus AI
-*   **Context-Aware Assistant**: A central chat interface that has "Live Memory" of your timetable, GPA, and assignments. Ask things like *"What is my GPA?"* or *"When is my next class?"*
+*   **Context-Aware Assistant**: A central chat interface that has "Live Memory" of your timetable, GPA, and assignments. Ask things like *"What is my GPA?"* or *"When is my next class?" You can do anything with it really*
 
 ---
 
