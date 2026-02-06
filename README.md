@@ -1,6 +1,6 @@
 # Project Nexus: The AI Campus Super-App ⚡
 
-![Project Nexus Preview](public/images/nexus-preview.png)
+![Project Nexus Preview](public/images/screenshot.png)
 
 Project Nexus is a unified, intelligent ecosystem designed to revolutionize campus life. It integrates academic management, social exchange, and campus navigation into a single, high-performance interface.
 
